@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_email">
+    <sys_script_email action="INSERT_OR_UPDATE">
+        <name>PC-Test1</name>
+        <new_lines_to_html>true</new_lines_to_html>
+        <script><![CDATA[(function runMailScript(/* GlideRecord */ current, /* TemplatePrinter */ template,
+          /* Optional EmailOutbound */ email, /* Optional GlideRecord */ email_action,
+          /* Optional GlideRecord */ event) {
+
+          // Add your code here
+
+var num = 'Number/s: ';
+	
+if(current.variables.one == "true") {
+	num += 'One';
+}
+if(current.variables.two == "true") {
+	num += ', Two';
+}
+if(current.variables.three == "true") {
+	num += ', Three';
+}
+	
+if(num.charAt(10)==',')	{ //remove comma if it the fist character.
+	num = num.replace(', ', '');
+}	
+	
+	
+template.print(num + "<br /><br />" + num);
+	
+	
+})(current, template, email, email_action, event);]]></script>
+        <sys_class_name>sys_script_email</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-11-19 16:28:57</sys_created_on>
+        <sys_id>13e98a231bb330108f43c803604bcb62</sys_id>
+        <sys_mod_count>42</sys_mod_count>
+        <sys_name>PC-Test1</sys_name>
+        <sys_package display_value="NeedIt" source="x_58872_needit">6ead8e780f603200cd674f8ce1050ed1</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="NeedIt">6ead8e780f603200cd674f8ce1050ed1</sys_scope>
+        <sys_update_name>sys_script_email_13e98a231bb330108f43c803604bcb62</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-11-19 21:14:58</sys_updated_on>
+    </sys_script_email>
+</record_update>
